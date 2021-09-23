@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Ekran główny -->
+<!---->
+<!--        Data        | Autor zmian           | Zmiany-->
+<!---->
+<!--        19.05.2020  | Szymon Krawczyk       |   Stworzenie -->
+<!--                    |                       |-->
+<!--        24.05.2020  | Szymon Krawczyk       |   Dodanie ilości graczy online -->
+<!--                    |                       |   Rozszerzenie opisu gry-->
+<!--                    |                       |-->
+<!---->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane hgap="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="600.0" vgap="16.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.MainWindowViewController">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="164.0" minHeight="10.0" percentHeight="60.0" prefHeight="69.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="4.0" GridPane.columnSpan="2">
+         <children>
+            <Label text="Zasady gry">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextArea fx:id="gameRulesField" editable="false" prefHeight="200.0" prefWidth="200.0" text="Snake 1 vs 1&#10;&#10;Opis i Zasady:&#10; ) Nie ma jedzenia - wąż sam się wydłuża (dokładniej mówiąc, nie kurczy się)&#10; ) Warunek wygranej - 5 punktów&#10; ) Punkty zdobywane są, gdy przeciwnik wejdzie na zajęte pole (albo poza planszę)&#10; ) Sterowanie za pomocą przycisków w oknie&#10; ) Twój kolor to zielony, kolor przeciwnika to pomarańczowy" wrapText="true" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" GridPane.columnIndex="2">
+         <children>
+            <Label text="Sesja:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="sessionWins" text="Wygrane: 0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="sessionLoses" text="Przegrane: 0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="searchGameButton" layoutX="241.0" layoutY="58.0" mnemonicParsing="false" onAction="#searchGame" text="Wyszukaj grę" />
+            <Button fx:id="leaveQueueButton" disable="true" layoutX="239.0" layoutY="91.0" mnemonicParsing="false" onAction="#leaveQueue" text="Opuść kolejkę" />
+            <Label fx:id="playersOnline" layoutX="242.0" layoutY="25.0" text="Graczy online: " />
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</GridPane>

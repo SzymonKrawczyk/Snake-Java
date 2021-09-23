@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Ekran główny gry -->
+<!---->
+<!--        Data        | Autor zmian           | Zmiany-->
+<!---->
+<!--        19.05.2020  | Szymon Krawczyk       |   Stworzenie-->
+<!--                    |                       |-->
+<!--        24.05.2020  | Szymon Krawczyk       |   Funkcjonalność canvas, poprawki-->
+<!--                    |                       |-->
+<!---->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane hgap="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="804.0" prefWidth="600.0" vgap="16.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.GameWindowViewController">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" percentWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="540.0" minHeight="540.0" prefHeight="540.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="130.0" minHeight="130.0" prefHeight="130.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+         <children>
+            <Label fx:id="userName" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="38.0" layoutY="22.0" prefHeight="27.0" prefWidth="159.0" text="Ty">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="userScore" layoutX="232.0" layoutY="18.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="273.0" layoutY="22.0" prefHeight="27.0" prefWidth="22.0" text="Vs" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="opponentScore" layoutX="319.0" layoutY="18.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="opponentName" layoutX="356.0" layoutY="22.0" prefWidth="159.0" text="Przeciwnik">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <Canvas fx:id="gameCanvas" height="540.0" width="540.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="giveUpButton" mnemonicParsing="false" onAction="#giveUp" text="Poddaj się" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="buttonUp" layoutX="131.0" layoutY="15.0" mnemonicParsing="false" onAction="#buttonUpAction" prefHeight="50.0" prefWidth="50.0" text="^" />
+            <Button fx:id="buttonLeft" layoutX="81.0" layoutY="40.0" mnemonicParsing="false" onAction="#buttonLeftAction" prefHeight="50.0" prefWidth="50.0" text="&lt;" />
+            <Button fx:id="buttonRight" layoutX="181.0" layoutY="40.0" mnemonicParsing="false" onAction="#buttonRightAction" prefHeight="50.0" prefWidth="50.0" text="&gt;" />
+            <Button fx:id="buttonDown" layoutX="131.0" layoutY="65.0" mnemonicParsing="false" onAction="#buttonDownAction" prefHeight="50.0" prefWidth="50.0" text="v" />
+         </children></AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</GridPane>
